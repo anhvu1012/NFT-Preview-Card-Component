@@ -1,0 +1,143 @@
+$font: 'Outfit', sans-serif;
+
+$blue-500: hsl(215, 51%, 70%);
+$cyan-400: hsl(178, 100%, 50%);
+
+$main-bg: hsl(217, 54%, 11%);
+$card-bg: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$hover-image: rgba(0, 255, 247, 0.5);
+$white: hsl(0, 0%, 100%);
+
+body, h1, p, figure, hr{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: $font;
+  background-color: $main-bg;
+  color: $blue-500;
+  height: 100vh;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center{
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin text-hover-state{
+  color: $cyan-400;
+}
+
+main{
+  background-color: $card-bg;
+  border-radius: 20px;
+  margin: auto 25px;
+  padding: 25px;
+
+  .image-wrapper{
+    border-radius: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    cursor: pointer;
+
+    .image{
+      width: 100%;
+      object-fit: contain;  
+      border-radius: inherit;
+    }
+
+    .hover-state{
+      display: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $hover-image;
+      border-radius: inherit;
+    }
+
+    &:hover{
+      .hover-state{
+        display: flex;
+      }
+    }
+  }
+
+  .preview-info{
+    .name{
+      color: $white;
+      font-size: 1.4em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      &:hover{
+        @include text-hover-state;
+      }
+    }
+
+    .description{
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .ETH-clock-section{
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      &>div{
+        column-gap: 5px;
+
+        .ethereum{
+          color: $cyan-400;
+        }
+
+        .time-left{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  hr{
+    height: 0.3px;
+    border: none;
+    border-top: 1px solid $line;
+  }
+
+  .account-info{
+    margin-top: 15px;
+    align-items: center;
+    column-gap: 20px;
+
+    .profile-picture{
+      width: 2em;
+      border: 1px solid $white;
+      border-radius: 50%;
+    }
+
+    .account-info-description{
+      font-size: 14px;
+      .account-name{
+        color: $white;
+        cursor: pointer;
+
+        &:hover{
+          @include text-hover-state;
+        }
+      }
+    }
+  }
+}
