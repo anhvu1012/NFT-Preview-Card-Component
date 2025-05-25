@@ -28,12 +28,13 @@ body {
 main {
   background-color: hsl(216, 50%, 16%);
   border-radius: 20px;
-  margin: auto 25px;
-  padding: 25px;
+  margin: auto 1.5em;
+  padding: 1.5em;
+  max-width: 300px;
 }
 main .image-wrapper {
   border-radius: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 1.5em;
   position: relative;
   cursor: pointer;
 }
@@ -56,9 +57,9 @@ main .image-wrapper:hover .hover-state {
 }
 main .preview-info .name {
   color: hsl(0, 0%, 100%);
-  font-size: 1.4em;
+  font-size: 1.35em;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 0.9em;
   cursor: pointer;
 }
 main .preview-info .name:hover {
@@ -66,11 +67,11 @@ main .preview-info .name:hover {
 }
 main .preview-info .description {
   line-height: 1.75;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
 }
 main .preview-info .ETH-clock-section {
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 0.9em;
 }
 main .preview-info .ETH-clock-section > div {
   column-gap: 5px;
@@ -78,8 +79,8 @@ main .preview-info .ETH-clock-section > div {
 main .preview-info .ETH-clock-section > div .ethereum {
   color: hsl(178, 100%, 50%);
 }
-main .preview-info .ETH-clock-section > div .time-left {
-  font-size: 15px;
+main .preview-info .ETH-clock-section > div .ethereum, main .preview-info .ETH-clock-section > div .time-left {
+  font-size: 0.9em;
 }
 main hr {
   height: 0.3px;
@@ -87,7 +88,7 @@ main hr {
   border-top: 1px solid hsl(215, 32%, 27%);
 }
 main .account-info {
-  margin-top: 15px;
+  margin-top: 0.9em;
   align-items: center;
   column-gap: 20px;
 }
@@ -97,7 +98,7 @@ main .account-info .profile-picture {
   border-radius: 50%;
 }
 main .account-info .account-info-description {
-  font-size: 14px;
+  font-size: 0.85em;
 }
 main .account-info .account-info-description .account-name {
   color: hsl(0, 0%, 100%);
@@ -105,4 +106,16 @@ main .account-info .account-info-description .account-name {
 }
 main .account-info .account-info-description .account-name:hover {
   color: hsl(178, 100%, 50%);
+}
+
+@media screen and (min-width: 56.25em) {
+  main .preview-info .description {
+    font-size: 1.1em;
+  }
+  main .preview-info .ETH-clock-section > div .ethereum, main .preview-info .ETH-clock-section > div .time-left {
+    font-size: 1em;
+  }
+  main .account-info .account-info-description {
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=styles.css.map */

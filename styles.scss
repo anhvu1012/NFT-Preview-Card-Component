@@ -43,12 +43,13 @@ body{
 main{
   background-color: $card-bg;
   border-radius: 20px;
-  margin: auto 25px;
-  padding: 25px;
+  margin: auto 1.5em;
+  padding: 1.5em;
+  max-width: 300px;
 
   .image-wrapper{
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 1.5em;
     position: relative;
     cursor: pointer;
 
@@ -78,9 +79,9 @@ main{
   .preview-info{
     .name{
       color: $white;
-      font-size: 1.4em;
+      font-size: 1.35em;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 0.9em;
       cursor: pointer;
 
       &:hover{
@@ -90,12 +91,12 @@ main{
 
     .description{
       line-height: 1.75;
-      margin-bottom: 20px;
+      margin-bottom: 1.25em;
     }
 
     .ETH-clock-section{
       justify-content: space-between;
-      margin-bottom: 15px;
+      margin-bottom: 0.9em;
 
       &>div{
         column-gap: 5px;
@@ -104,8 +105,8 @@ main{
           color: $cyan-400;
         }
 
-        .time-left{
-          font-size: 15px;
+        .ethereum, .time-left{
+          font-size: 0.9em;
         }
       }
     }
@@ -118,7 +119,7 @@ main{
   }
 
   .account-info{
-    margin-top: 15px;
+    margin-top: 0.9em;
     align-items: center;
     column-gap: 20px;
 
@@ -129,7 +130,7 @@ main{
     }
 
     .account-info-description{
-      font-size: 14px;
+      font-size: 0.85em;
       .account-name{
         color: $white;
         cursor: pointer;
@@ -137,6 +138,30 @@ main{
         &:hover{
           @include text-hover-state;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  main{
+    .preview-info{
+      .description{
+        font-size: 1.1em;
+      }
+
+      .ETH-clock-section{
+        &>div{
+            .ethereum, .time-left{
+            font-size: 1em;
+          }
+        }
+      }
+    }
+
+    .account-info{
+      .account-info-description{
+        font-size: 1em;
       }
     }
   }
